@@ -1,12 +1,15 @@
-name: a2_s08_needs
+name: A2 S08 2
 
 on:
+  workflow_dispatch:
 
-. workflow_dispatch:
 jobs:
-imp1:
-runs-on: ubuntu-latest
+  imp1:
+    runs-on: ubuntu-latest
 
-steps:
-  - run: |
-      echo "ok  remoto"
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Mostrar archivos
+        run: ls -la
